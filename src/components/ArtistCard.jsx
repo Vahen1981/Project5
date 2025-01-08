@@ -11,10 +11,10 @@ const ArtistCard = ({ artist }) => {
 
   return (
     <Card sx={{ maxWidth: 345, borderRadius: '8px', boxShadow: 3 }} onClick={handleClick}>
-      <CardMedia 
+      <CardMedia
         component="img"
         height="200"
-        image={artist.picture_medium} 
+        image={artist.picture_medium}
         alt={artist.name}
         sx={{ objectFit: 'cover' }}
       />

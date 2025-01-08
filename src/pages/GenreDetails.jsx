@@ -13,7 +13,7 @@ const GenreDetails = () => {
   useEffect(() => {
     const fetchArtists = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/${id}`);
+        const response = await fetch(`http://localhost:3000/api/genre/${id}`);
         const data = await response.json();
         setArtists(data.data);
       } catch (error) {
