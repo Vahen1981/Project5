@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Grid2, Typography, CircularProgress, Alert, Box } from '@mui/material';
-import ArtistCard from '../components/ArtistCard.jsx';
+import GenreCard from '../components/GenreCard.jsx';
 
-const API_URL = 'http://localhost:3000/api/deezer-artists';
+const API_URL = 'http://localhost:3000/api/';
 
 const Home = () => {
-  const [artists, setArtists] = useState([]);
+  const [genres, setGenres] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -14,9 +14,10 @@ const Home = () => {
       try {
         const response = await fetch(API_URL);
         const data = await response.json();
-        setArtists(data.data);
+        setGenres(data.data);
       } catch (error) {
-        console.error("Error fetching artists:", error);
+        console.error("Error al obtener los géneros:", error);
+        setError("No se pudieron obtener los géneros");
       } finally {
         setLoading(false);
       }
@@ -31,27 +32,23 @@ const Home = () => {
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
-      minHeight: '100vh', // Para ocupar toda la altura de la ventana
-      textAlign: 'center', // Centrar texto dentro de elementos
+      minHeight: '100vh',
+      textAlign: 'center',
     }}
     >
       <Container>
-        <Typography variant="h4" gutterBottom>
-          Metal Artists
+        <Typography variant="h1" gutterBottom sx={{ fontWeight: 'bold', fontFamily: 'Orbitron, serif' }}>
+          Géneros musicales
         </Typography>
-
-        {/* Mostrar cargando */}
         {loading && <CircularProgress />}
 
-        {/* Mostrar errores */}
         {error && <Alert severity="error">{error}</Alert>}
 
-        {/* Mostrar artistas */}
         {!loading && !error && (
-          <Grid2 container spacing={3}>
-            {artists.map((artist) => (
-              <Grid2 item xs={12} sm={6} md={4} key={artist.id}>
-                <ArtistCard artist={artist} />
+          <Grid2 container spacing={3} sx={{ justifyContent: 'center', alignItems: 'center' }}>
+            {genres.map((genre) => (
+              <Grid2 xs={12} sm={6} md={4} key={genre.id}>
+                <GenreCard genre={genre} />
               </Grid2>
             ))}
           </Grid2>

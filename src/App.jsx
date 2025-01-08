@@ -1,8 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import ArtistDetail from './pages/ArtistDetail';
-import AlbumDetail from './pages/AlbumDetail';
+import GenreDetails from './pages/GenreDetails';
 import Header from './components/Header';
 import ErrorBoundary from './pages/ErrorBoundary';
 
@@ -12,11 +11,12 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/artist/:id" element={<ArtistDetail />} />
-        <Route path="/album/:id" element={<AlbumDetail />} />
+        <Route path="/genre/:id" element={<GenreDetails />} /> 
+        <Route path="artist/:id}" element={<ArtistDetails />} /> 
       </Routes>
     </ErrorBoundary>
   );
 };
 
 export default App;
+
