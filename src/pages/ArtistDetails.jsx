@@ -2,6 +2,11 @@ import { Button, CircularProgress, Grid2, Link, Typography, Card, Container } fr
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 
+//Url en servidor local
+//const API_URL = 'http://localhost:3000/api/';
+
+//Url en servidor en render
+const API_URL = 'https://servidor-para-deezer.onrender.com/api/';
 
 const ArtistDetails = () => {
     const { id } = useParams();
@@ -13,11 +18,11 @@ const ArtistDetails = () => {
     useEffect(() => {
         const fetchArtistDetails = async () => {
             try {
-                const response = await fetch(`http://localhost:3000/api/artist/${id}`);
+                const response = await fetch(`${API_URL}artist/${id}`);
                 const data = await response.json();
                 setInfo(data);
 
-                const trackResponse = await fetch(`http://localhost:3000/api/artist/tracklist/${id}`);
+                const trackResponse = await fetch(`${API_URL}artist/tracklist/${id}`);
                 const trackData = await trackResponse.json();
                 setTracks(trackData.data);
 

@@ -3,6 +3,11 @@ import { useParams, useLocation } from 'react-router-dom';
 import { Container, Box, Grid2, CircularProgress, Typography } from '@mui/material';
 import ArtistCard from '../components/ArtistCard';
 
+//Url en servidor local
+//const API_URL = 'http://localhost:3000/api/';
+
+//Url en servidor en render
+const API_URL = 'https://servidor-para-deezer.onrender.com/api/';
 
 const GenreDetails = () => {
   const { id } = useParams();
@@ -16,7 +21,7 @@ const GenreDetails = () => {
   useEffect(() => {
     const fetchArtists = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/genre/${id}`);
+        const response = await fetch(`${API_URL}genre/${id}`);
         const data = await response.json();
         setArtists(data.data);
       } catch (error) {
