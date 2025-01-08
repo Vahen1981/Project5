@@ -19,7 +19,7 @@ const ArtistCard = ({ artist }) => {
         sx={{ objectFit: 'cover' }}
       />
       <CardContent sx={{ textAlign: 'center' }}>
-        <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+        <Typography variant="h6" sx={{ fontWeight: 'bold', fontFamily: 'Orbitron, serif' }}>
           {artist.name}
         </Typography>
       </CardContent>

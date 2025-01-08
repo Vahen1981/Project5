@@ -37,7 +37,7 @@ const Home = () => {
     }}
     >
       <Container>
-        <Typography variant="h1" gutterBottom sx={{ fontWeight: 'bold', fontFamily: 'Orbitron, serif' }}>
+        <Typography variant="h2" gutterBottom sx={{ fontWeight: 'bold', fontFamily: 'Orbitron, serif' }}>
           Géneros musicales
         </Typography>
         {loading && <CircularProgress />}

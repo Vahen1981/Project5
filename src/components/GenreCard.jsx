@@ -2,11 +2,13 @@ import React from 'react';
 import { Card, CardMedia, CardContent, Typography, CardActionArea } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
-const GenreCard = ({ genre }) => {
+const GenreCard = (props) => {
+
+  const { genre } = props;
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/genre/${genre.id}`);
+    navigate(`/genre/${genre.id}`, { state: { genre } });
   };
 
   return (

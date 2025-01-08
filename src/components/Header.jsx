@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Typography variant="h6" component={Link} to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Typography variant="h6" component={Link} to="/" sx={{ fontFamily: 'Oswald', textDecoration: 'none', color: 'inherit' }}>
           Music Catalog
         </Typography>
       </Toolbar>
