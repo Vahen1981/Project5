@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 
 //Url en servidor local
-//const API_URL = 'http://localhost:3000/api/';
+const API_URL = 'http://localhost:3000/api/';
 
 //Url en servidor en render
-const API_URL = 'https://servidor-para-deezer.onrender.com/api/';
+//const API_URL = 'https://servidor-para-deezer.onrender.com/api/';
 
 const ArtistDetails = () => {
     const { id } = useParams();

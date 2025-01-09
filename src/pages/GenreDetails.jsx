@@ -4,10 +4,10 @@ import { Container, Box, Grid2, CircularProgress, Typography } from '@mui/materi
 import ArtistCard from '../components/ArtistCard';
 
 //Url en servidor local
-//const API_URL = 'http://localhost:3000/api/';
+const API_URL = 'http://localhost:3000/api/';
 
 //Url en servidor en render
-const API_URL = 'https://servidor-para-deezer.onrender.com/api/';
+//const API_URL = 'https://servidor-para-deezer.onrender.com/api/';
 
 const GenreDetails = () => {
   const { id } = useParams();

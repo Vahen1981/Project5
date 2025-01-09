@@ -3,10 +3,10 @@ import { Container, Grid2, Typography, CircularProgress, Alert, Box } from '@mui
 import GenreCard from '../components/GenreCard.jsx';
 
 //Url en servidor local
-//const API_URL = 'http://localhost:3000/api/';
+const API_URL = 'http://localhost:3000/api/';
 
 //Url en servidor en render
-const API_URL = 'https://servidor-para-deezer.onrender.com/api/';
+//const API_URL = 'https://servidor-para-deezer.onrender.com/api/';
 
 const Home = () => {
   const [genres, setGenres] = useState([]);
