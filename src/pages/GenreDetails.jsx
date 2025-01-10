@@ -46,8 +46,11 @@ const GenreDetails = () => {
     }}
     >
       <Container sx={{
-        backgroundColor: 'rgba(0, 0, 0, 0.71)',
         backdropFilter: 'blur(6px)',
+        background: 'linear-gradient(to right,rgba(90, 0, 60, 0.34),rgb(90, 0, 60))',
+        borderLeft: '3px solid black',
+        borderRight: '3px solid black',
+        paddingTop: '50px'
       }}>
         <Typography variant="h2" sx={{ fontWeight: 'bold', fontFamily: 'Orbitron, serif', textAlign: 'center', margin: '70px 0', color: 'rgb(255, 255, 255)' }}>
           Artistas de {genre.name}

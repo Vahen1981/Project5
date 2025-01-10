@@ -8,17 +8,17 @@ const API_URL = 'http://localhost:3000/api/';
 //Url en servidor en render
 //const API_URL = 'https://servidor-para-deezer.onrender.com/api/';
 
-const Playlists = () => {
-  const [playlists, setPlaylists] = useState([]);
+const Genres = () => {
+  const [genres, setGenres] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchPlaylists = async () => {
+    const fetchArtists = async () => {
       try {
-        const response = await fetch(API_URL);
+        const response = await fetch(`${API_URL}/genres`);
         const data = await response.json();
-        setPlaylists(data.data);
+        setGenres(data.data);
       } catch (error) {
         console.error("Error al obtener los géneros:", error);
         setError("No se pudieron obtener los géneros");
@@ -26,7 +26,7 @@ const Playlists = () => {
         setLoading(false);
       }
     };
-    fetchPlaylists();
+    fetchArtists();
   }, []);
 
   return (
@@ -40,19 +40,25 @@ const Playlists = () => {
       textAlign: 'center',
     }}
     >
-      <Container>
-        <Typography variant="h2" gutterBottom sx={{ fontWeight: 'bold', fontFamily: 'Orbitron, serif' }}>
-          Playlists populares
+      <Container sx={{
+        backdropFilter: 'blur(6px)',
+        background: 'linear-gradient(to right,rgba(90, 0, 60, 0.34),rgb(90, 0, 60))',
+        borderLeft: '3px solid black',
+        borderRight: '3px solid black',
+        paddingTop: '50px'
+      }}>
+        <Typography variant="h2" gutterBottom sx={{ fontWeight: 'bold', fontFamily: 'Orbitron, serif', margin: '70px 0', color: 'rgb(255, 255, 255)' }}>
+          Géneros musicales
         </Typography>
         {loading && <CircularProgress />}
 
         {error && <Alert severity="error">{error}</Alert>}
 
         {!loading && !error && (
-          <Grid2 container spacing={3} sx={{ justifyContent: 'center', alignItems: 'center' }}>
-            {playlists.map((playlist) => (
-              <Grid2 xs={12} sm={6} md={4} key={playlist.id}>
-                <GenreCard playlist={playlist} />
+          <Grid2 container spacing={3} sx={{ justifyContent: 'center', alignItems: 'center', paddingBottom: '10vh' }}>
+            {genres.map((genre) => (
+              <Grid2 xs={12} sm={6} md={4} key={genre.id}>
+                <GenreCard genre={genre} />
               </Grid2>
             ))}
           </Grid2>
@@ -62,4 +68,5 @@ const Playlists = () => {
   );
 };
 
-export default Playlists;
+export default Genres;
+

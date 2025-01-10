@@ -50,9 +50,10 @@ const ArtistDetails = () => {
                     alignItems: 'center'
                 }}>
                     <Box sx={{
-                        backgroundColor: 'rgba(0, 0, 0, 0.78)',
                         padding: '30px',
-                        borderRadius: '30px'
+                        borderRadius: '30px',
+                        background: 'linear-gradient(to right,rgba(90, 0, 60, 0.34),rgb(90, 0, 60))',
+                        border: '3px solid black',
                     }}>
                         <Typography variant="h3" gutterBottom sx={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Orbitron, serif', margin: '20px 0 50px 0', color: 'rgb(255, 255, 255)' }}>
                             {info.name}
@@ -80,7 +81,7 @@ const ArtistDetails = () => {
                             <img
                                 src={info.picture_big}
                                 alt={info.name}
-                                style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px' }}
+                                style={{ maxWidth: '100%', height: 'auto', borderRadius: '20px', border: '3px solid black'}}
                             />
                             </Grid2>
 
@@ -88,7 +89,7 @@ const ArtistDetails = () => {
                                 <Grid2 container spacing={4} sx={{ justifyContent: 'center' }}>
    
                                     <Grid2 xs={12} sx={{marginBottom: '20px'}}>
-                                        <Card sx={{ textAlign: 'center', padding: 3, boxShadow: 3, height: '60%' }}>
+                                        <Card sx={{ border: '3px solid black', borderRadius: '20px', textAlign: 'center', padding: 3, boxShadow: 3, height: '60%' }}>
                                             <Typography variant="h5" sx={{ fontWeight: 'bold', fontFamily: 'Oswald', marginBottom: 2 }}>
                                                 Fans
                                             </Typography>
@@ -99,7 +100,7 @@ const ArtistDetails = () => {
                                     </Grid2>
 
                                     <Grid2 xs={12} sx={{marginBottom: '20px'}}>
-                                        <Card sx={{ textAlign: 'center', padding: 3, boxShadow: 3, height: '60%' }}>
+                                        <Card sx={{ border: '3px solid black', borderRadius: '20px', textAlign: 'center', padding: 3, boxShadow: 3, height: '60%' }}>
                                             <Typography variant="h5" sx={{ fontFamily: 'Oswald', fontWeight: 'bold', marginBottom: 2 }}>
                                             Música
                                             </Typography>
@@ -114,7 +115,7 @@ const ArtistDetails = () => {
 
                                 {/* Tracks más populares */}
                                 <Grid2 xs={12}>
-                                    <Card sx={{ textAlign: 'right', padding: 3, boxShadow: 3 }}>
+                                    <Card sx={{ border: '3px solid black', borderRadius: '20px', textAlign: 'right', padding: 3, boxShadow: 3 }}>
                                         <Typography variant="h6" sx={{ fontFamily: 'Oswald', fontWeight: 'bold', marginBottom: 2 }}>
                                         Tracks populares
                                         </Typography>

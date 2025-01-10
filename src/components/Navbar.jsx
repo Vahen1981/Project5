@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import * as React from 'react';
 
 const pages = [
-    { name: 'Inicio', path: '/home' },
-    { name: 'Géneros', path: '/' },
+    { name: 'Inicio', path: '/' },
+    { name: 'Géneros', path: '/genres' },
     { name: 'Top 10', path: '/top' },
     ];
 
@@ -25,7 +25,7 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: 'rgb(168, 0, 112)' }}>
+    <AppBar position="fixed" sx={{ backgroundColor: 'rgb(168, 0, 112)' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* Logo for larger screens */}

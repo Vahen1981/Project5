@@ -43,8 +43,11 @@ const TopTracks = () => {
     }}
     >
       <Container sx={{
-        backgroundColor: 'rgba(0, 0, 0, 0.71)',
+        background: 'linear-gradient(to right,rgba(90, 0, 60, 0.34),rgb(90, 0, 60))',
+        borderLeft: '3px solid black',
+        borderRight: '3px solid black',
         backdropFilter: 'blur(6px)',
+        paddingTop: '50px'
       }}>
         <Typography variant="h2" gutterBottom sx={{ fontWeight: 'bold', fontFamily: 'Orbitron, serif', marginTop: '50px', marginBottom: '50px', color: 'white'}}>
           Top tracks
