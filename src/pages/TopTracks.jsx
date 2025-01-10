@@ -42,8 +42,11 @@ const TopTracks = () => {
       textAlign: 'center',
     }}
     >
-      <Container>
-        <Typography variant="h2" gutterBottom sx={{ fontWeight: 'bold', fontFamily: 'Orbitron, serif', marginTop: '50px', marginBottom: '50px'}}>
+      <Container sx={{
+        backgroundColor: 'rgba(0, 0, 0, 0.71)',
+        backdropFilter: 'blur(6px)',
+      }}>
+        <Typography variant="h2" gutterBottom sx={{ fontWeight: 'bold', fontFamily: 'Orbitron, serif', marginTop: '50px', marginBottom: '50px', color: 'white'}}>
           Top tracks
         </Typography>
         {loading && <CircularProgress />}

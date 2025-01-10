@@ -45,8 +45,11 @@ const GenreDetails = () => {
       textAlign: 'center',
     }}
     >
-      <Container>
-        <Typography variant="h2" sx={{ fontWeight: 'bold', fontFamily: 'Orbitron, serif', textAlign: 'center', marginBottom: 2 }}>
+      <Container sx={{
+        backgroundColor: 'rgba(0, 0, 0, 0.71)',
+        backdropFilter: 'blur(6px)',
+      }}>
+        <Typography variant="h2" sx={{ fontWeight: 'bold', fontFamily: 'Orbitron, serif', textAlign: 'center', margin: '70px 0', color: 'rgb(255, 255, 255)' }}>
           Artistas de {genre.name}
         </Typography>
 
@@ -55,7 +58,7 @@ const GenreDetails = () => {
         {error && <Typography color="error" sx={{ textAlign: 'center' }}>{error}</Typography>}
 
         {!loading && !error && (
-          <Grid2 container spacing={3} sx={{ justifyContent: 'center' }}>
+          <Grid2 container spacing={3} sx={{ justifyContent: 'center', alignItems: 'center', paddingBottom: '10vh' }}>
             {artists.map(artist => (
               <Grid2 xs={12} sm={6} md={4} key={artist.id}>
                 <ArtistCard artist={artist} />

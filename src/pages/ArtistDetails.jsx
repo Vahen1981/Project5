@@ -1,4 +1,4 @@
-import { Button, CircularProgress, Grid2, Link, Typography, Card, Container } from '@mui/material';
+import { Button, CircularProgress, Grid2, Link, Typography, Card, Container, Box } from '@mui/material';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 
@@ -43,10 +43,20 @@ const ArtistDetails = () => {
 
             {!loading && !error && (
 
-                <div style={{ padding: '20px' }}>
-                    <Typography variant="h3" sx={{ fontWeight: 'bold', fontFamily: 'Orbitron, serif', textAlign: 'center', marginBottom: 2 }}>
-                        {info.name}
-                    </Typography>
+                <Container sx={{
+                    height: '100vh',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+                    <Box sx={{
+                        backgroundColor: 'rgba(0, 0, 0, 0.78)',
+                        padding: '30px',
+                        borderRadius: '30px'
+                    }}>
+                        <Typography variant="h3" gutterBottom sx={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Orbitron, serif', margin: '20px 0 50px 0', color: 'rgb(255, 255, 255)' }}>
+                            {info.name}
+                        </Typography>
 
                         <Grid2
                             container
@@ -76,26 +86,25 @@ const ArtistDetails = () => {
 
                             <Grid2 xs={12} md={6}>
                                 <Grid2 container spacing={4} sx={{ justifyContent: 'center' }}>
-                                    {/* Número de fans */}
-                                    <Grid2 xs={12}>
-                                        <Card sx={{ textAlign: 'center', padding: 3, boxShadow: 3 }}>
-                                            <Typography variant="h4" sx={{ fontWeight: 'bold', fontFamily: 'Oswald', marginBottom: 2 }}>
-                                            Fans
+   
+                                    <Grid2 xs={12} sx={{marginBottom: '20px'}}>
+                                        <Card sx={{ textAlign: 'center', padding: 3, boxShadow: 3, height: '60%' }}>
+                                            <Typography variant="h5" sx={{ fontWeight: 'bold', fontFamily: 'Oswald', marginBottom: 2 }}>
+                                                Fans
                                             </Typography>
-                                            <Typography variant="h4" color="primary">
-                                            {info.nb_fan.toLocaleString()}
+                                            <Typography variant="h6" color="primary">
+                                                {info.nb_fan.toLocaleString()}
                                             </Typography>
                                         </Card>
                                     </Grid2>
 
-                                    {/* Enlace de Deezer */}
-                                    <Grid2 xs={12}>
-                                        <Card sx={{ textAlign: 'center', padding: 3, boxShadow: 3 }}>
-                                            <Typography variant="h4" sx={{ fontFamily: 'Oswald', fontWeight: 'bold', marginBottom: 2 }}>
+                                    <Grid2 xs={12} sx={{marginBottom: '20px'}}>
+                                        <Card sx={{ textAlign: 'center', padding: 3, boxShadow: 3, height: '60%' }}>
+                                            <Typography variant="h5" sx={{ fontFamily: 'Oswald', fontWeight: 'bold', marginBottom: 2 }}>
                                             Música
                                             </Typography>
                                             <Link href={info.link} target="_blank" rel="noopener" underline="none">
-                                            <Button variant="contained" color="primary" size="large">
+                                            <Button variant="contained" color="primary" size="large" sx={{fontSize: '10px'}}>
                                                 Escuchar en Deezer
                                             </Button>
                                             </Link>
@@ -123,8 +132,8 @@ const ArtistDetails = () => {
 
                             </Grid2>
                         </Grid2>
-                       
-                </div>
+                    </Box>   
+                </Container>
             )}
         </div>
     );

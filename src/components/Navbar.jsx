@@ -5,9 +5,8 @@ import * as React from 'react';
 
 const pages = [
     { name: 'Inicio', path: '/home' },
-    { name: 'Playlists', path: '/playlists' },
     { name: 'Géneros', path: '/' },
-    { name: 'Top 20', path: '/top' },
+    { name: 'Top 10', path: '/top' },
     ];
 
 function Navbar() {
@@ -26,7 +25,7 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ backgroundColor: 'rgb(168, 0, 112)' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* Logo for larger screens */}
