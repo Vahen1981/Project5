@@ -1,4 +1,4 @@
-import { Box, Button, Container, IconButton, Typography } from '@mui/material';
+import { Box, Container, IconButton, Typography } from '@mui/material';
 import HeadphonesIcon from '@mui/icons-material/Headphones';
 import React from 'react';
 import { Link } from 'react-router-dom';
