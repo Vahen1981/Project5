@@ -27,7 +27,7 @@ function Navbar() {
 
   return (
     <ErrorBoundary>
-      <AppBar position="fixed" sx={{ backgroundColor: 'rgb(168, 0, 112)' }}>
+      <AppBar position="fixed" sx={{ backgroundColor: 'rgb(168, 0, 112)', height: '65px' }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
 

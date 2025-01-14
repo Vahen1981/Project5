@@ -50,8 +50,16 @@ const GenreDetails = () => {
           borderRight: '3px solid black',
           paddingTop: '50px'
         }}>
-          <Typography variant="h2" sx={{ fontWeight: 'bold', fontFamily: 'Orbitron, serif', textAlign: 'center', margin: '70px 0', color: 'rgb(255, 255, 255)' }}>
-            Artistas de {genre.name}
+          <Typography variant="h2" 
+            sx={{ 
+              fontWeight: 'bold', 
+              fontFamily: 'Orbitron, serif', 
+              textAlign: 'center', 
+              margin: '70px 0', 
+              color: 'rgb(255, 255, 255)',
+              fontSize: { xs: '2rem', sm: '3rem', md: '4rem' }
+              }}>
+            {genre.name}
           </Typography>
 
           {loading && <CircularProgress sx={{ display: 'block', margin: 'auto' }} />}

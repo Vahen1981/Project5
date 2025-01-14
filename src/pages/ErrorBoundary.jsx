@@ -20,7 +20,7 @@ class ErrorBoundary extends React.Component {
       return (
         <Container>
           <Typography variant="h4" color="error">
-            Something went wrong. Please try again later.
+            Algo salió mal... por favor intenta de nuevo más tarde
           </Typography>
         </Container>
       );

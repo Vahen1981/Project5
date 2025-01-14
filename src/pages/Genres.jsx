@@ -45,7 +45,14 @@ const Genres = () => {
           borderRight: '3px solid black',
           paddingTop: '50px'
         }}>
-          <Typography variant="h2" gutterBottom sx={{ fontWeight: 'bold', fontFamily: 'Orbitron, serif', margin: '70px 0', color: 'rgb(255, 255, 255)' }}>
+          <Typography variant="h2" gutterBottom sx={{ 
+              fontWeight: 'bold', 
+              fontFamily: 'Orbitron, serif', 
+              margin: '70px 0', 
+              color: 'rgb(255, 255, 255)', 
+              fontSize: { xs: '2rem', sm: '3rem', md: '4rem' } 
+              }}
+            >
             Géneros musicales
           </Typography>
           {loading && <CircularProgress />}

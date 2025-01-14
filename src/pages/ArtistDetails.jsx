@@ -37,100 +37,201 @@ const ArtistDetails = () => {
         <ErrorBoundary>
             <div>
                 {loading && <CircularProgress sx={{ display: 'block', margin: 'auto' }} />}
-                {error && <Typography color="error" sx={{ textAlign: 'center' }}>{error}</Typography>}
+                {error && <Typography color="error" sx={{ textAlign: 'center', marginTop: 2 }}>{error}</Typography>}
 
                 {!loading && !error && (
-
-                    <Container sx={{
-                        height: '100vh',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center'
-                    }}>
-                        <Box sx={{
-                            padding: '30px',
-                            borderRadius: '30px',
-                            background: 'linear-gradient(to right,rgba(90, 0, 60, 0.34),rgb(90, 0, 60))',
-                            border: '3px solid black',
-                        }}>
-                            <Typography variant="h3" gutterBottom sx={{ textAlign: 'center', fontWeight: 'bold', fontFamily: 'Orbitron, serif', margin: '20px 0 50px 0', color: 'rgb(255, 255, 255)' }}>
+                    <Container
+                        sx={{
+                            height: { xs: '100%', md: 'calc(100vh - 65px)' },
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            marginTop: '65px',
+                            padding: 0,
+                        }}
+                    >
+                        <Box
+                            sx={{
+                                borderRadius: '40px',
+                                background: 'linear-gradient(to right, rgba(90, 0, 60, 0.34), rgb(90, 0, 60))',
+                                boxShadow: '0px 8px 10px rgb(0, 0, 0)',
+                                width: '100%',
+                                margin: 0,
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                            }}
+                        >
+                            <Typography
+                                variant="h3"
+                                gutterBottom
+                                sx={{
+                                    textAlign: 'center',
+                                    fontWeight: 'bold',
+                                    fontFamily: 'Orbitron, serif',
+                                    margin: '20px 0 40px',
+                                    color: 'rgb(255, 255, 255)',
+                                    width: '100%',
+                                }}
+                            >
                                 {info.name}
                             </Typography>
 
-                            <Grid2
-                                container
-                                spacing={4}
-                                sx={{
-                                flexDirection: { xs: 'column', sm: 'column', md: 'row' },
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                }}
-                            >
-
-                                <Grid2
-                                xs={12}
-                                md={6}
+                            <Box
                                 sx={{
                                     display: 'flex',
+                                    flexDirection: { xs: 'column', md: 'row' },
+                                    alignItems: { xs: 'center', md: 'stretch' },
                                     justifyContent: 'center',
-                                    marginBottom: { xs: 4, md: 0 }, 
+                                    width: '100%',
+                                    height: 'auto',
+                                    paddingBottom: '7vh' 
                                 }}
                                 >
-                                <img
+                                {/* Imagen del Artista */}
+                                <Box
+                                    sx={{
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    marginBottom: { xs: 4, md: 0 },
+                                    width: { xs: '90%', md: '50%' },
+                                    height: 'auto' 
+                                    }}
+                                >
+                                    <img
                                     src={info.picture_big}
                                     alt={info.name}
-                                    style={{ maxWidth: '100%', height: 'auto', borderRadius: '20px', border: '3px solid black'}}
-                                />
-                                </Grid2>
+                                    style={{
+                                        width: '90%',
+                                        height: 'auto',
+                                        borderRadius: '20px',
+                                        boxShadow: '0px 8px 10px rgb(0, 0, 0)',
+                                    }}
+                                    />
+                                </Box>
 
-                                <Grid2 xs={12} md={6}>
-                                    <Grid2 container spacing={4} sx={{ justifyContent: 'center' }}>
-    
-                                        <Grid2 xs={12} sx={{marginBottom: '20px'}}>
-                                            <Card sx={{ border: '3px solid black', borderRadius: '20px', textAlign: 'center', padding: 3, boxShadow: 3, height: '60%' }}>
-                                                <Typography variant="h5" sx={{ fontWeight: 'bold', fontFamily: 'Oswald', marginBottom: 2 }}>
-                                                    Fans
-                                                </Typography>
-                                                <Typography variant="h6" color="primary">
-                                                    {info.nb_fan.toLocaleString()}
-                                                </Typography>
-                                            </Card>
-                                        </Grid2>
-
-                                        <Grid2 xs={12} sx={{marginBottom: '20px'}}>
-                                            <Card sx={{ border: '3px solid black', borderRadius: '20px', textAlign: 'center', padding: 3, boxShadow: 3, height: '60%' }}>
-                                                <Typography variant="h5" sx={{ fontFamily: 'Oswald', fontWeight: 'bold', marginBottom: 2 }}>
-                                                Música
-                                                </Typography>
-                                                <Link href={info.link} target="_blank" rel="noopener" underline="none">
-                                                <Button variant="contained" color="primary" size="large" sx={{fontSize: '10px'}}>
-                                                    Escuchar en Deezer
-                                                </Button>
-                                                </Link>
-                                            </Card>
-                                        </Grid2>
-                                    </Grid2>
-
-                                    <Grid2 xs={12}>
-                                        <Card sx={{ border: '3px solid black', borderRadius: '20px', textAlign: 'right', padding: 3, boxShadow: 3, maxWidth: '330px' }}>
-                                            <Typography variant="h6" sx={{ fontFamily: 'Oswald', fontWeight: 'bold', marginBottom: 2 }}>
-                                            Tracks populares
+                                {/* Información adicional */}
+                                <Box
+                                    sx={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                    width: { xs: '90%', md: '50%' },
+                                    height: '100%', 
+                                    padding: 2,
+                                    }}
+                                >
+                                    <Card sx={{ 
+                                            display: 'flex', 
+                                            justifyContent: 'space-around', 
+                                            alignItems: 'center',  
+                                            borderRadius: '20px', 
+                                            padding: 3, 
+                                            boxShadow: 10, 
+                                            width: '90%',
+                                            marginBottom: '10%',
+                                            backgroundColor: 'rgba(255, 255, 255, 0.36)',
+                                            }}
+                                        >
+                                        {/* Fans */}
+                                        <Box                          
+                                            sx={{
+                                                display: 'flex',
+                                                flexDirection: 'row',
+                                                justifyContent: 'center',
+                                                alignItems: 'center',
+                                                }}
+                                            >
+                                            <Typography
+                                                variant="h4"
+                                                sx={{
+                                                    fontWeight: 'bold',
+                                                    fontFamily: 'Oswald',
+                                                    marginRight: '20px',
+                                                    fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' }
+                                                }}
+                                            >
+                                                Fans
                                             </Typography>
-                                            <ul style={{ paddingLeft: 0, listStyleType: 'none' }}>
+                                            <Typography variant="h4" color="white" 
+                                                sx={{
+                                                    margin: 0, 
+                                                    fontFamily: 'Oswald',
+                                                    fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' }
+                                                    }}
+                                                >
+                                                {info.nb_fan.toLocaleString()}
+                                            </Typography>
+                                            
+                                        </Box>
+
+                                        {/* Enlace de Deezer */}
+
+                                        <Box
+                                            sx={{
+                                                textAlign: 'center',
+                                            }}
+                                        >
+                                            <Link
+                                                href={info.link}
+                                                target="_blank"
+                                                rel="noopener"
+                                                underline="none"
+                                            >
+                                                <Button
+                                                    variant="contained"
+                                                    color="primary"
+                                                    size="large"
+                                                    sx={{ fontSize: { xs: '0.5rem', sm: '0.8rem', md: '0.8rem' } }}
+                                                >
+                                                    Escuchar
+                                                </Button>
+                                            </Link>
+                                        </Box>
+
+                                    </Card>
+
+                                    {/* Tracks populares */}
+                                    <Card
+                                        sx={{
+                                            borderRadius: 2,
+                                            padding: 3,
+                                            boxShadow: 10,
+                                            width: '90%',
+                                            textAlign: 'left',
+                                            borderRadius: '20px',
+                                            backgroundColor: 'rgba(255, 255, 255, 0.36)',
+                                        }}
+                                    >
+                                        <Typography
+                                            variant="h6"
+                                            sx={{
+                                                fontFamily: 'Oswald',
+                                                fontWeight: 'bold',
+                                                marginBottom: 2,
+                                            }}
+                                        >
+                                            Tracks populares
+                                        </Typography>
+                                        <ul style={{ paddingLeft: 0, listStyleType: 'none' }}>
                                             {tracks.map((track) => (
                                                 <li key={track.id}>
-                                                <Typography variant="body1" sx={{ fontFamily: 'Oswald', marginBottom: 1 }}>
-                                                    {track.title}
-                                                </Typography>
+                                                    <Typography
+                                                        variant="body1"
+                                                        sx={{ fontFamily: 'Oswald', marginBottom: 1 }}
+                                                    >
+                                                        {track.title}
+                                                    </Typography>
                                                 </li>
                                             ))}
-                                            </ul>
-                                        </Card>
-                                    </Grid2>
+                                        </ul>
+                                    </Card>
 
-                                </Grid2>
-                            </Grid2>
-                        </Box>   
+                                </Box>
+                            </Box>
+                        </Box>
                     </Container>
                 )}
             </div>

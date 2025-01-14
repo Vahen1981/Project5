@@ -46,7 +46,15 @@ const TopTracks = () => {
           backdropFilter: 'blur(6px)',
           paddingTop: '50px'
         }}>
-          <Typography variant="h2" gutterBottom sx={{ fontWeight: 'bold', fontFamily: 'Orbitron, serif', marginTop: '50px', marginBottom: '50px', color: 'white' }}>
+          <Typography variant="h2" gutterBottom sx={{ 
+            fontWeight: 'bold', 
+            fontFamily: 'Orbitron, serif', 
+            marginTop: '50px', 
+            marginBottom: '50px', 
+            color: 'white',
+            fontSize: { xs: '2rem', sm: '3rem', md: '4rem' }
+            }}
+            >
             Top tracks
           </Typography>
           {loading && <CircularProgress />}
